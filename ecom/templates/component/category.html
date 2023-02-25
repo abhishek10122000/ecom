@@ -1,0 +1,8 @@
+
+<header class="text-gray-600 body-font">
+    <ul class="container mx-auto flex flex-wrap gap-10 font-semibold justify-center p-2 flex-col md:flex-row items-center shadow-xl">
+        {% for cat in category %}
+        <li><a href="{% url 'category' cat.id %}" class="">{{cat.title |upper}}</a></li>
+        {% endfor %}
+    </ul>
+  </header>
