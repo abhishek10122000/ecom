@@ -1,13 +1,15 @@
 <header class="text-white body-font bg-blue-600 ">
-    <div class=" md:flex lg:flex justify-between  p-3 md:flex-col lg:flex-row ">
+    <div class=" md:flex lg:flex justify-between md:flex-col lg:flex-row ">
       <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
         
         <span class="ml-3 text-xl">Tailblocks</span>
       </a>
-      <div class="md:flex lg:flex md:flex-col  lg:flex-row">
-          <form action="" method="get" class="flex gap-0 mr-20  text-black p-2">
-            <input type="text" class="rounded-l-full">
-            <button class="p-2 rounded-r-full px-4 bg-white">Search</button>
+      <div class="md:flex lg:flex md:flex-col p-2  lg:flex-row">
+          <form action="{% url 'search' %}" method="get" class="flex gap-0 mr-20  my-auto  text-black  ">
+            <input type="text" name="search" class="rounded-l-full h-12 lg:w-80">
+            <button class=" rounded-r-full h-12 px-4  bg-slate-400 border-black">
+              <i class="bi bi-search p-0 text-xl font-bold"></i>
+            </button>
           </form>
           <nav class="my-auto sm:p-5">
             <a class="mr-5 hover:text-gray-900">Home</a>

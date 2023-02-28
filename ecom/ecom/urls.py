@@ -24,6 +24,8 @@ urlpatterns = [
     path('', home ,name='home'),
 
     path('category/<int:id>/',category,name='category'),
+    path('productView/<slug>/',productView,name='productView'),
+    path('search/',search,name='search'),
 ]
 urlpatterns +=static(settings.MEDIA_URL,
                      document_root=settings.MEDIA_ROOT)

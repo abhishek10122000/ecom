@@ -1,0 +1,5 @@
+<ul class="">
+    {% for cat in category %}
+    <li class="bg-stone-500 p-2 text-center capitalize text-lg font-serif"><a href="{% url 'category' cat.id %}">{{cat.title}}</a></li>
+    {% endfor %}
+</ul>

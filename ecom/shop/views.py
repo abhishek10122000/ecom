@@ -19,3 +19,18 @@ def category(r,id):
     data['product']=Product.objects.filter(category=id)
 
     return render(r,'category.html',data)
+
+
+def productView(r,slug):
+    data={}
+    data['category']=getCatgory()
+    data['product']=Product.objects.get(slug=slug)
+
+        
+    return render(r,'productView.html',data)
+
+def search(r):
+    data={}
+    data['category']=getCatgory()
+    data['product']=Product.objects.filter(name__icontains=r.GET.get('search'))
+    return render(r,'category.html',data)
