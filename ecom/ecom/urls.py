@@ -26,6 +26,8 @@ urlpatterns = [
     path('category/<int:id>/',category,name='category'),
     path('productView/<slug>/',productView,name='productView'),
     path('search/',search,name='search'),
+    path('createaccount/',createaccount, name="createaccount"),
+    path('login/',login, name="login"),
 ]
 urlpatterns +=static(settings.MEDIA_URL,
                      document_root=settings.MEDIA_ROOT)

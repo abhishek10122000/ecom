@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<form action="" class="bg-black flex flex-col text-white" method="post">
+    {% csrf_token %}
+    {{forms}}
+
+</form>
+
+
+
+
+{% endblock  %}

@@ -18,3 +18,17 @@ class Product(models.Model):
     price=models.FloatField()
     discount_price=models.FloatField(null=True,blank=True)
     brand=models.CharField(max_length=200)
+    def __str__(self):
+        return self.name
+    
+
+
+
+
+class Useru(models.Model):
+    name=models.CharField( max_length=200)
+    contact=models.FloatField()
+    email=models.EmailField(max_length=254)
+    password=models.CharField(max_length=200)
+    def __str__(self):
+        return self.name
