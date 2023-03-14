@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+{% load crispy_forms_tags %}
+<div class=" flex">
+  <div class="w-2/3">
+    <div class=" px-4 mx-auto lg:w-3/4 md:w-full mt-10">
+
+      <div class="flex mb-4  shadow-2xl border-opacity-50 p-2 sm:flex-row flex-col">
+        <form action="" method="post" class='w-full p-5'>
+          {% csrf_token %}
+          {{forms|crispy}}
+
+          <input type="submit" class="w-full bg-green-500">
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <div class="">
+    <form action="" method="post">
+      {% csrf_token %}
+      {% for add in add %}
+      <label for="">
+        <input type="radio" name="save_address" class="card_redio" value="{{add.id}}">
+        <div class="p-5 redio_body shadow-xl">
+          <h1>{{add.name}}</h1>
+          <span>(+91) {{add.alt_contact}}</span>
+          <p>{{add.landmark}} {{add.city}} {{add.state}} {{add.pincode}} </p>
+
+
+          <span class="p-1 bg-red-600 text-white text-xs ">(+91) {{add.type}}</span>
+          {% if add.isDefoult %}
+          <span>Defoult</span>
+          {% endif %}
+        </div>
+      </label>
+      {% endfor %}
+    </form>
+
+  </div>
+
+
+</div>
+
+{% endblock %}

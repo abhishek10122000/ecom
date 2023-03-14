@@ -28,6 +28,13 @@ urlpatterns = [
     path('search/',search,name='search'),
     path('createaccount/',createaccount, name="createaccount"),
     path('login/',login, name="login"),
+    path('add-to-cart/<slug>/',AddToCart, name="addCart"),
+    path('remove-from-cart/<slug>/',removeCart, name="removeCart"),
+
+    path('cart/',myCart,name="cart"),
+    path('addcoupon/',addCoupon,name="addcoupon"),
+    path('removecoupon/',removeCoupon,name="removecoupon"),
+    path('checkout/',checkout,name="checkout"),
 ]
 urlpatterns +=static(settings.MEDIA_URL,
                      document_root=settings.MEDIA_ROOT)

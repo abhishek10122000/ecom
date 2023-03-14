@@ -17,7 +17,7 @@
                         <h1 class="truncate text-lg">₹{{pro.price}} -<del class="text-sm mx-1 text-red-500">-{{pro.discount_price}}</del></h1>
                         <hr>
                         <div class=" text-white mt-2 flex just gap-2 text-center">
-                            <a href="" class="p-2 rounded-lg w-1/2 bg-red-500">Add to card</a>
+                            <a href="{% url 'addCart'  pro.slug %}" class="p-2 rounded-lg w-1/2 bg-red-500">Add to card</a>
                             <a href="{% url 'productView' pro.slug %}" class="p-2 rounded-lg w-1/2 bg-green-500">Buy now</a>
                         </div>
                     </div>
