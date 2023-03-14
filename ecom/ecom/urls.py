@@ -35,6 +35,7 @@ urlpatterns = [
     path('addcoupon/',addCoupon,name="addcoupon"),
     path('removecoupon/',removeCoupon,name="removecoupon"),
     path('checkout/',checkout,name="checkout"),
+    path('check-with-Save/',checkWithSave,name="checkwithsave"),
 ]
 urlpatterns +=static(settings.MEDIA_URL,
                      document_root=settings.MEDIA_ROOT)

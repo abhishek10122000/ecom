@@ -10,28 +10,32 @@
           {% csrf_token %}
           {{forms|crispy}}
 
-          <input type="submit" class="w-full bg-green-500">
+          <input type="submit" class="w-full bg-green-500 p-2 rounded-xl text-white">
         </form>
       </div>
 
     </div>
   </div>
   <div class="">
-    <form action="" method="post">
+    <form action="{% url 'checkwithsave' %}" method="post">
       {% csrf_token %}
       {% for add in add %}
       <label for="">
-        <input type="radio" name="save_address" class="card_redio" value="{{add.id}}">
-        <div class="p-5 redio_body shadow-xl">
+        <input onChange="this.form.submit()" type="radio" name="addressID" class="card_redio" value="{{add.id}}">
+        <div class="p-5 redio_body shadow-xl ">
           <h1>{{add.name}}</h1>
           <span>(+91) {{add.alt_contact}}</span>
           <p>{{add.landmark}} {{add.city}} {{add.state}} {{add.pincode}} </p>
 
+          <!-- <span>{{add.get_type_display}}</span> -->
 
-          <span class="p-1 bg-red-600 text-white text-xs ">(+91) {{add.type}}</span>
-          {% if add.isDefoult %}
-          <span>Defoult</span>
-          {% endif %}
+
+          <div class="flex justify-between mt-5">
+            <span class="p-1 bg-red-600 text-white text-xs "> {{add.type}}</span>
+            {% if add.isDefoult %}
+            <span>Defoult</span>
+            {% endif %}
+          </div>
         </div>
       </label>
       {% endfor %}

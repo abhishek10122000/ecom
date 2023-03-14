@@ -167,7 +167,23 @@ def checkout(r):
             f=form.save(commit=False)
             f.user=r.user
             f.save()
+
+
+            order=Order.objects.get(user=r.user, ordered=False)
+            order.address=f
+            order.save()
+
             return redirect(checkout)
         
 
     return render(r, 'checkout.html',{'forms':form,'add':add})
+
+
+def checkWithSave(r):
+    if r.method=="POST":
+        addressId=r.POST.get("addressID")
+        address=Address.objects.get(id=addressId)
+        order=Order.objects.get(user=r.user,ordered=False)
+        order.address=address
+        order.save()
+        return redirect(checkout)
